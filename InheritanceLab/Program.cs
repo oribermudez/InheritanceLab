@@ -12,58 +12,25 @@ namespace InheritanceLab
     {
         static void Main(string[] args)
         {
-            string path = "employees.txt";
+            EmployeeManager manager = new EmployeeManager();
 
-            string[] lines = File.ReadAllLines(path);
+            double averageWeeklyPay = manager.GetAverageWeeklyPay();
+            Console.WriteLine(string.Format("Average weekly pay: {0:C2}", averageWeeklyPay));
 
-            List<Employee> employees = new List<Employee>();
+            Employee highestPaidWagedEmployee = manager.GetHighestPaid();
+            double highestWagedPay = highestPaidWagedEmployee.Pay;
+            Console.WriteLine("Highest waged pay: " + highestWagedPay.ToString("C2"));
+            Console.WriteLine("Highest waged employee: " + highestPaidWagedEmployee.Name);
 
-            foreach (string line in lines)
-            {
-                string[] employeeData = line.Split(':');
+            Employee lowestPaidSalariedEmployee = manager.GetLowestPaid();
+            double lowestSalariedPay = lowestPaidSalariedEmployee.Pay;
+            Console.WriteLine("Lowest salaried pay: " + lowestSalariedPay.ToString("C2"));
+            Console.WriteLine("Lowest salaried employee: " + lowestPaidSalariedEmployee.Name);
 
-                string id = employeeData[0];
-                string name = employeeData[1];
-                string address = employeeData[2];
-                string phone = employeeData[3];
-                long sin = long.Parse(employeeData[4]);
-                string birthdate = employeeData[5];
-                string department = employeeData[6];
-
-                string firstIdDigit = id.Substring(0, 1);
-                int firstIdDigitNum = int.Parse(firstIdDigit);
-
-                bool isSalaried = firstIdDigitNum >= 0 && firstIdDigitNum <= 4;
-                bool isWaged = firstIdDigitNum >= 5 && firstIdDigitNum <= 7;
-                bool isPartTime = firstIdDigitNum >= 8 && firstIdDigitNum <= 9;
-
-                if (isSalaried)
-                {
-                    double salary = double.Parse(employeeData[7]);
-
-                    Salaried salaried = new Salaried(id, name, address, phone, sin, birthdate, department, salary);
-
-                    employees.Add(salaried);
-                }
-                else if (isWaged)
-                {
-                    double rate = double.Parse(employeeData[7]);
-                    double hours = double.Parse(employeeData[8]);
-
-                    Waged waged = new Waged(id, name, address, phone, sin, birthdate, department, rate, hours);
-
-                    employees.Add(waged);
-                }
-                else if (isPartTime)
-                {
-                    double rate = double.Parse(employeeData[7]);
-                    double hours = double.Parse(employeeData[8]);
-
-                    PartTime partTime = new PartTime(id, name, address, phone, sin, birthdate, department, rate, hours);
-
-                    employees.Add(partTime);
-                }
-            }
+            double[] percentages = manager.GetCategoryPercentages();
+            Console.WriteLine("Salaried employees percentage: " + percentages[2].ToString("N2") + "%");
+            Console.WriteLine("Waged employees percentage: " + percentages[1].ToString("N2") + "%");
+            Console.WriteLine("Part time employees percentage: " + percentages[0].ToString("N2") + "%");
         }
     }
 }

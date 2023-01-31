@@ -46,15 +46,8 @@ namespace InheritanceLab.Classes
         /// <param name="sin"> Holds the employee's sin </param>
         /// <param name="birthdate"> Holds the employee's birthdate </param>
         /// <param name="department"> Holds the employee's department </param>
-        public Employee(string id, string name, string address, string phone, long sin, string birthdate, string department)
+        public Employee()
         {
-            this.id = id;
-            this.name = name;
-            this.address = address;
-            this.phone = phone;
-            this.sin = sin;
-            this.birthdate = birthdate;
-            this.department = department;
         }
     }
 }

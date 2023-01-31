@@ -42,16 +42,9 @@ namespace InheritanceLab.Classes
         /// <summary>
         /// User-defined PartTime class constructor
         /// </summary>
-        /// <param name="id"> Holds the employee's ID </param>
-        /// <param name="name"> Holds the employee's name </param>
-        /// <param name="address"> Holds the employee's address </param>
-        /// <param name="phone"> Holds the employee's phone </param>
-        /// <param name="sin"> Holds the employee's sin </param>
-        /// <param name="birthdate"> Holds the employee's birthdate </param>
-        /// <param name="department"> Holds the employee's department </param>
         /// <param name="rate"> Holds the employee's hour rate </param>
         /// <param name="hours"> Holds the number of hours worked </param>
-        public PartTime(string id, string name, string address, string phone, long sin, string birthdate, string department, double rate, double hours) : base(id, name, address, phone, sin, birthdate, department)
+        public PartTime(double rate, double hours)
         {
             this.rate = rate;
             this.hours = hours;

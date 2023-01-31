@@ -59,8 +59,15 @@ namespace InheritanceLab.Classes
         /// <param name="department"> Holds the employee's department </param>
         /// <param name="rate"> Holds the employee's hour rate </param>
         /// <param name="hours"> Holds the number of hours worked </param>
-        public Waged(string id, string name, string address, string phone, long sin, string birthdate, string department, double rate, double hours) : base(id, name, address, phone, sin, birthdate, department)
+        public Waged(string id, string name, string address, string phone, long sin, string birthdate, string department, double rate, double hours)
         {
+            this.id = id;
+            this.name = name;
+            this.address = address;
+            this.phone = phone;
+            this.sin = sin;
+            this.birthdate = birthdate;
+            this.department = department;
             this.rate = rate;
             this.hours = hours;
         }

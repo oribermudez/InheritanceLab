@@ -37,15 +37,8 @@ namespace InheritanceLab.Classes
         }
 
         /// <summary>
-        /// User defined Employee class constructor
+        /// No-argument Employee class constructor
         /// </summary>
-        /// <param name="id"> Holds the employee's ID </param>
-        /// <param name="name"> Holds the employee's name </param>
-        /// <param name="address"> Holds the employee's address </param>
-        /// <param name="phone"> Holds the employee's phone </param>
-        /// <param name="sin"> Holds the employee's sin </param>
-        /// <param name="birthdate"> Holds the employee's birthdate </param>
-        /// <param name="department"> Holds the employee's department </param>
         public Employee()
         {
         }

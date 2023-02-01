@@ -11,10 +11,6 @@ namespace InheritanceLab.Classes
     {
         private readonly List<Employee> employeesList;
 
-        /// <summary>
-        /// Class constructor
-        /// </summary>
-        /// <param name="employeeList"> Inmutable list of Person objects </param>
         public EmployeeManager()
         {
             string path = "employees.txt";
